@@ -8,6 +8,9 @@ namespace la_mia_pizzeria_static.Controllers
         {
             using(PizzaContext pz = new PizzaContext()) {
             List<Pizza> list = pz.Pizzas.ToList();
+                if(list == null)
+                return View("ErrorList");
+                
             return View(list);
             }
    
@@ -17,8 +20,6 @@ namespace la_mia_pizzeria_static.Controllers
             using(PizzaContext pz = new PizzaContext())
             {
                 Pizza pizza = pz.Pizzas.Where(p => p.Id == id).FirstOrDefault();
-                if (pizza == null)
-                    return View("Error");
                 return View(pizza);
             }
         }

@@ -33,3 +33,10 @@ img{
     justify-content:space-between;
 
 }
+.containerr{
+    width:100%;
+    height:calc(100vh - 201px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
